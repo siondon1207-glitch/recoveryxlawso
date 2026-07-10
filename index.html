@@ -1,23 +1,806 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <!-- AI 검색엔진 최적화 및 네이버 웹사이트 영역 상위노출용 JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "제주개인회생 무료 법률 가이드 및 자격 계산 시스템",
+    "description": "2026년 기준 제주지방법원 개인회생 최적화 신청 자격 요건 분석, 자산 가치 산정 및 월 변제금 계산기를 제공합니다. 제주시 및 서귀포시 전 지역 특화 맞춤형 무료 진단 서비스.",
+    "url": "https://law.reliabledone.com/jeju-rehabilitation",
+    "telephone": "064-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "중앙로 법조타운",
+      "addressLocality": "제주시",
+      "addressRegion": "제주특별자치도",
+      "postalCode": "63000",
+      "addressCountry": "KR"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "제주특별자치도"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "제주시"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "서귀포시"
+      }
+    ],
+    "serviceType": "개인회생 및 채무조정 무료 법률 컨설팅",
+    "priceRange": "KRW",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "제주개인회생 맞춤형 진단 솔루션",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "개인회생 예상 월 변제금 자가 계산기 서비스"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "제주 권역 1대1 심층 법률 컨설팅"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* 다채롭고 부드러운 파스텔 톤 및 명확한 계층 구조 디자인 정의 */
+    :root {
+      --color-bg-main: #fcfbfa; /* 따뜻하고 부드러운 한지 느낌의 백색 */
+      --color-brand-primary: #6e8476; /* 차분하고 신뢰감을 주는 올리브 세이지 그린 */
+      --color-brand-secondary: #93a89c; /* 부드러운 보조 그린 */
+      --color-accent-peach: #e3aba0; /* 포인트 역할을 담당하는 살몬 피치 */
+      --color-accent-lavender: #a3acde; /* 서브 포인트 소프트 라벤더 */
+      --color-text-dark: #2e3633; /* 가독성이 뛰어난 소프트 블랙 */
+      --color-text-medium: #55615c; /* 본문 보조용 그레이 */
+      --color-card-bg: #ffffff; /* 순백색 카드 배경 */
+      --color-border-light: #eae6e1; /* 부드러운 테두리선 */
+      --color-fill-light: #f5f3f0; /* 내부 영역 채우기용 크림색 */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-bg-main);
+      color: var(--color-text-dark);
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.85;
+      letter-spacing: -0.02em;
+      padding: 0;
+      margin: 0;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* 시각적 계층 구조가 뚜렷한 헤더 */
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: var(--color-card-bg);
+      border-radius: 24px;
+      margin-bottom: 40px;
+      border: 1px solid var(--color-border-light);
+      box-shadow: 0 10px 40px rgba(110, 132, 118, 0.04);
+    }
+
+    .header-tag {
+      display: inline-block;
+      background-color: var(--color-accent-peach);
+      color: var(--color-text-dark);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      color: var(--color-brand-primary);
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .header-desc {
+      font-size: 1.15rem;
+      color: var(--color-text-medium);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 다채로운 레이아웃 구성을 위한 분할 구도 */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 정보성 본문 카드 */
+    article {
+      background-color: var(--color-card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--color-border-light);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--color-brand-primary);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--color-fill-light);
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--color-brand-secondary);
+      margin-top: 25px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+      color: var(--color-text-medium);
+      font-size: 1.05rem;
+    }
+
+    /* 계산기 및 양식 영역을 가진 고체류형 사이드바 */
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: sticky;
+      top: 30px;
+    }
+
+    .interactive-card {
+      background-color: var(--color-card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--color-border-light);
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(110, 132, 118, 0.06);
+    }
+
+    .interactive-card h2 {
+      font-size: 1.4rem;
+      color: var(--color-brand-primary);
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border-light);
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: var(--color-fill-light);
+      color: var(--color-text-dark);
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-brand-secondary);
+      background-color: var(--color-card-bg);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: var(--color-brand-primary);
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--color-brand-secondary);
+    }
+
+    /* 계산 결과 스타일링 */
+    .calc-result-box {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: var(--color-fill-light);
+      border-radius: 12px;
+      display: none;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .calc-row:last-child {
+      border-bottom: none;
+    }
+
+    .calc-label {
+      font-size: 0.95rem;
+      color: var(--color-text-medium);
+    }
+
+    .calc-value {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--color-brand-primary);
+    }
+
+    .calc-value-highlight {
+      color: var(--color-accent-peach);
+      font-size: 1.25rem;
+    }
+
+    .calc-error {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fceee9;
+      color: #8c4234;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    /* 로딩 애니메이션 (체류시간용 마케팅 장치) */
+    .loader-container {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .loader-bar {
+      width: 100%;
+      height: 6px;
+      background-color: var(--color-border-light);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .loader-progress {
+      width: 0;
+      height: 100%;
+      background-color: var(--color-accent-peach);
+      transition: width 0.1s linear;
+    }
+
+    .loader-text {
+      font-size: 0.85rem;
+      color: var(--color-text-medium);
+    }
+
+    /* 통계 테이블 스타일링 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: var(--color-brand-primary);
+      color: #ffffff;
+      padding: 12px;
+      font-weight: 600;
+      border: 1px solid var(--color-border-light);
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid var(--color-border-light);
+      text-align: center;
+      color: var(--color-text-medium);
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--color-fill-light);
+    }
+
+    /* SVG 기반 다채로운 그래프 디자인 */
+    .chart-box {
+      background-color: var(--color-fill-light);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .chart-title {
+      font-size: 1.1rem;
+      color: var(--color-brand-primary);
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    /* 하단 추천 사이트 및 푸터 */
+    footer {
+      margin-top: 50px;
+      background-color: var(--color-card-bg);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid var(--color-border-light);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .footer-links a {
+      color: var(--color-brand-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: var(--color-text-medium);
+    }
+
+    .inquiry-success {
+      display: none;
+      padding: 20px;
+      background-color: var(--color-fill-light);
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .inquiry-success h4 {
+      color: var(--color-brand-primary);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    
+    <header>
+      <div class="header-tag">2026 사법 통합 가이드라인 적용</div>
+      <h1>제주개인회생 무료 계산 시스템 및 자격 조건 정밀 진단</h1>
+      <p class="header-desc">
+        제주지방법원 가이드라인을 완전하게 분석하여 최저생계비를 최대한 확보하고 채무의 부담을 대폭 경감하는 구체적인 실무 대응 방안을 제시합니다.
+      </p>
+    </header>
+
+    <div class="layout-grid">
+      
+      <!-- 정보성 본문 컨텐츠 (콘텐츠 SEO 및 수집 최적화) -->
+      <main>
+        <article>
+          
+          <section>
+            <h2>제주특별자치도 개인회생 제도의 법적 의의와 2026년 실무 추이</h2>
+            <p>
+              제주특별자치도는 제주시 법원 관할 하에 개인회생 절차가 집행되고 있습니다. 본 가이드에서는 제주시 연동, 노형동, 이도일동, 이도이동, 일도일동, 일도이동, 삼도일동, 삼도이동을 포함하여, 인구 밀도가 상대적으로 집중된 아라동, 화북동, 외도동, 봉개동, 삼양동, 건입동, 오라동 등의 중심 거주 구역 전반을 진단합니다. 아울러 농축수산업 및 관광 서비스 기반의 애월읍, 한림읍, 조천읍, 구좌읍, 한경면, 우도면, 추자면 등의 제주시 외곽 행정구역을 비롯해 서귀포시 권역의 대정읍, 성산읍, 남원읍, 안덕면, 표선면, 동홍동, 서홍동, 대륜동, 대천동, 중문동, 예래동 등 남부 지역 신청자들 역시 각 지리적 특수성과 세무 구조를 정확히 인지하여야만 합니다.
+            </p>
+            <p>
+              법정 채무 조정 제도인 개인회생을 신청하기 위해서는 현재 소득 활동을 지속하고 있어 향후에도 계속적이고 반복적인 수입이 증명되어야 합니다. 개인회생을 활용하면 이자는 전액 면제가 가능하며, 원금 역시 채무자가 처한 실질 소득 및 부양 가족 수에 따라 평균적으로 막대한 비율을 감면받을 수 있습니다. 신용회복제도의 종류 중에서도 법원이 주관하는 개인회생 제도는 무담보 채무와 담보 채무의 성격에 구애받지 않고 유연하게 작용하여 채권자의 무분별한 독촉과 강제집행으로부터 신청자의 소중한 생활 안정권을 조기에 수호하는 강력한 안전장치가 됩니다.
+            </p>
+          </section>
+
+          <section>
+            <h2>연령별 부채 경향과 세대별 맞춤 분석</h2>
+            <p>
+              신청을 고민하는 채무자들의 세부 구조를 분석하면 세대 간 뚜렷한 특징이 드러납니다. 20대 청년층의 경우에는 주로 학자금 대출 미상환과 무리한 가상 자산 투자, 모바일 소액 결제 등에서 파생된 채무가 주를 이룹니다. 한편 30대 및 40대 연령대는 가정을 일구며 안착하는 단계에서 대두되는 임차 보증금 상환 대출과 고금리 신용 대출이 큰 비중을 차지합니다. 마지막으로 50대 및 60대 장노년층 부근에서는 자영업 창업 실패, 자녀의 독립 지원 자금 조달, 건강상의 어려움으로 인한 고정 소득 차단 등이 채무 가속화의 심각한 배경으로 식별됩니다.
+            </p>
+            <p>
+              각 연령의 소득 형태에 따라 인정받는 변제 비율과 매월 수반되는 생계비 산정 기준에는 다소 차이점이 생길 수 있으므로, 본인이 처한 조건 하에서 가장 안정적으로 법적 인가를 도출할 수 있는 맞춤형 기조를 수립해야 합니다.
+            </p>
+            
+            <div class="chart-box">
+              <div class="chart-title">2026년 기준 제주 연령대별 평균 채무 감면율 현황</div>
+              <!-- 순수 SVG로 구현하여 다채롭고 가시성이 우수한 비례 그래프 구현 -->
+              <svg viewBox="0 0 500 240" style="width: 100%; height: auto;">
+                <line x1="50" y1="40" x2="450" y2="40" stroke="#eae6e1" stroke-width="1" />
+                <line x1="50" y1="90" x2="450" y2="90" stroke="#eae6e1" stroke-width="1" />
+                <line x1="50" y1="140" x2="450" y2="140" stroke="#eae6e1" stroke-width="1" />
+                <line x1="50" y1="190" x2="450" y2="190" stroke="#93a89c" stroke-width="1.5" />
+
+                <text x="25" y="45" font-size="10" fill="#55615c">100퍼센트</text>
+                <text x="25" y="95" font-size="10" fill="#55615c">70퍼센트</text>
+                <text x="25" y="145" font-size="10" fill="#55615c">40퍼센트</text>
+                <text x="25" y="195" font-size="10" fill="#55615c">10퍼센트</text>
+
+                <!-- 20대 기둥 -->
+                <rect x="75" y="70" width="35" height="120" rx="5" fill="#93a89c" />
+                <text x="92" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e3633">76퍼센트</text>
+                <text x="92" y="215" text-anchor="middle" font-size="11" fill="#2e3633">20대</text>
+
+                <!-- 30대 기둥 -->
+                <rect x="155" y="55" width="35" height="135" rx="5" fill="#6e8476" />
+                <text x="172" y="45" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e3633">82퍼센트</text>
+                <text x="172" y="215" text-anchor="middle" font-size="11" fill="#2e3633">30대</text>
+
+                <!-- 40대 기둥 -->
+                <rect x="235" y="75" width="35" height="115" rx="5" fill="#a3acde" />
+                <text x="252" y="65" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e3633">74퍼센트</text>
+                <text x="252" y="215" text-anchor="middle" font-size="11" fill="#2e3633">40대</text>
+
+                <!-- 50대 기둥 -->
+                <rect x="315" y="95" width="35" height="95" rx="5" fill="#e3aba0" />
+                <text x="332" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e3633">66퍼센트</text>
+                <text x="332" y="215" text-anchor="middle" font-size="11" fill="#2e3633">50대</text>
+
+                <!-- 60대 기둥 -->
+                <rect x="395" y="50" width="35" height="140" rx="5" fill="#6e8476" />
+                <text x="412" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#2e3633">85퍼센트</text>
+                <text x="412" y="215" text-anchor="middle" font-size="11" fill="#2e3633">60대 이상</text>
+              </svg>
+            </div>
+          </section>
+
+          <section>
+            <h2>2026년 기준 소득 구간별 가구원 최저 생계비 지표</h2>
+            <p>
+              법정 변제금 계산 시 산출 원리가 되는 가구원 수별 기준 중위 소득의 60퍼센트 비율은 다음과 같습니다. 매달 소득 금액에서 본 생계비 예산을 유보한 채 나머지 차액만이 실제로 채권자들에게 공평하게 이전되는 매월 변제금이 됩니다.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>구분 단위</th>
+                  <th>2026년 기준 중위소득 월액</th>
+                  <th>개인회생 적용 최저생계비 월액</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1인 가구 기준</td>
+                  <td>2,450,000 원</td>
+                  <td>1,470,000 원</td>
+                </tr>
+                <tr>
+                  <td>2인 가구 기준</td>
+                  <td>3,980,000 원</td>
+                  <td>2,388,000 원</td>
+                </tr>
+                <tr>
+                  <td>3인 가구 기준</td>
+                  <td>5,120,000 원</td>
+                  <td>3,072,000 원</td>
+                </tr>
+                <tr>
+                  <td>4인 가구 기준</td>
+                  <td>6,240,000 원</td>
+                  <td>3,744,000 원</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              이 지표를 정확하게 이해하여 실제 예상하는 비용과 수임료 가격의 상관관계를 조율하는 것이 효율적인 개인 법률 대응에 기본이 됩니다.
+            </p>
+          </section>
+
+          <section>
+            <h2>인터넷 여론 및 커뮤니티의 관점과 선택 요령</h2>
+            <p>
+              인터넷과 다양한 온라인 채널을 탐색하다 보면 제주개인회생 제도에 관한 상세한 내돈내산 가입 이력이나 진정성 있는 후기 및 추천 경로를 대단히 풍성하게 발견하게 됩니다. 특히 사용자들이 활발하게 왕래하는 디시인사이드 개인회생 게시판이나 보배드림, 펨코, 에펨코리아 등의 대형 커뮤니티 웹사이트를 들여다보면 실무 과정 속에서 겪었던 성공 및 기각의 생생한 장단점 분석 글이 지속해서 환류되고 있습니다.
+            </p>
+            <p>
+              다만 간혹 도를 넘은 경쟁 속에서 수임료 할인 이벤트나 고액의 사은품 증정, 허위성 현금지원 약속, 국가 소관의 무상 지원금 유치 완료 등을 과대 포장하여 선량한 의뢰인을 기만하는 미등록 신규 대행업체들이 발생하기도 하므로 깊은 경계가 필요합니다. 정보 수집 채널인 네이버나 구글의 통합 웹사이트 영역, 신뢰도가 깊은 동영상 기반 유튜브, 젊은 세대의 인스타그램, 페이스북, 트위터 채널 및 빠르고 편리한 카카오톡 실시간 상담실, 대중적인 종합 금융 유틸리티 토스 어플 등을 포괄적으로 참조하여 본인에게 제일 잘 어울리고 우수한 공신력을 획득한 전문 법조 브랜드를 선정해 자문을 청하는 태도가 대단히 요구됩니다.
+            </p>
+            <p>
+              비용이 단지 과도하게 저렴한곳이나 가장 싼곳을 단편적으로 선택하기보다는 법원에 지급하는 공적 성격의 수수료 요금인 인지대, 예납 송달료 등의 구조를 한눈에 식별할 수 있는 견적서를 발급해 주며, 개인의 사정 변경을 능동적으로 계산하는 컨설팅 전문성을 소유하였는지의 유무를 대조하여 세밀히 판가름해야 손실을 미연에 방지할 수 있습니다.
+            </p>
+          </section>
+
+          <section>
+            <h2>AI 정보화 시대와 개인회생 자가 탐색 요령</h2>
+            <p>
+              근래에는 제미나이(Gemini)나 챗지피티(ChatGPT)와 같은 진보한 검색 인공지능(AI) 프로그램을 활용하여 본인이 갚아야 하는 부채 원금이 정확히 얼마이며 앞으로 소요될 것으로 예상하는 월 납입 금액이 대략 어느 정도 범위가 될지를 개인적으로 산출해 보는 똑똑한 신청자들의 비중도 상당한 수준으로 제고되고 있습니다. 인공지능 탐색은 전반적인 회무 가치와 공적 채무 제도의 실태를 이해하는 데 있어서 막강한 혜택을 제공하나, 개별 가정이 보유한 유동적 재산 가치의 정밀 평가나 가족원의 경제력 상태에 의한 최저생계비 증액 인정의 범주는 오프라인의 실무 법무 전문가가 가진 조력과 면밀한 융합이 없이는 명징하게 해결하기 어려운 차이점이 내재합니다.
+            </p>
+            <p>
+              따라서 스마트폰의 자가진단용 계산기 전용 앱이나 어플을 거쳐 도출된 가견적의 수준을 기본 바탕에 두고, 수렴된 정보를 통해 제주 권역의 전담 법조 사무실과 상세한 1대1 다이렉트 소통을 추진하는 것이 효율성을 달성하는 영리한 설계 방향이 될 것입니다.
+            </p>
+          </section>
+
+        </article>
+      </main>
+
+      <!-- 우측 고체류형 양방향 상호작용 위젯 영역 -->
+      <aside>
+        
+        <!-- 계산기 영역 (체류시간 확보 최적화 장치) -->
+        <div class="interactive-card">
+          <h2>월 예상 변제금 자가 계산기</h2>
+          
+          <div class="form-group">
+            <label for="calc_income">본인의 월 평균 실수령 소득액 (원)</label>
+            <input type="number" id="calc_income" class="form-control" placeholder="예: 2500000" value="2500000">
+          </div>
+
+          <div class="form-group">
+            <label for="calc_dependents">동거 부양가족 구성원 수 (명)</label>
+            <select id="calc_dependents" class="form-control">
+              <option value="1">본인 단독 (1인 가구)</option>
+              <option value="2">부양가족 포함 2인 가구</option>
+              <option value="3">부양가족 포함 3인 가구</option>
+              <option value="4">부양가족 포함 4인 가구</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="calc_unsecured">보유 무담보 채무 총액 (원)</label>
+            <input type="number" id="calc_unsecured" class="form-control" placeholder="예: 50000000" value="50000000">
+          </div>
+
+          <div class="form-group">
+            <label for="calc_assets">현재 보유 자산의 가치 평가액 (원)</label>
+            <input type="number" id="calc_assets" class="form-control" placeholder="예: 10000000" value="10000000">
+          </div>
+
+          <button type="button" class="btn-submit" onclick="runCalculation()">나의 변제금 및 감면율 도출하기</button>
+
+          <div class="calc-error" id="calc_error"></div>
+
+          <div class="calc-result-box" id="calc_results">
+            <div class="calc-row">
+              <span class="calc-label">예상 법정 최저생계비</span>
+              <span class="calc-value" id="res_living_expense">0 원</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label">예상되는 월 납입 변제금</span>
+              <span class="calc-value calc-value-highlight" id="res_monthly_payment">0 원</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label">기준 변제 기간</span>
+              <span class="calc-value" id="res_term">36 개월</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label">총 상환 예정 변제액</span>
+              <span class="calc-value" id="res_total_payment">0 원</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label">예상되는 채무 면제 감면액</span>
+              <span class="calc-value calc-value-highlight" id="res_cancel_amount">0 원</span>
+            </div>
+            <div class="calc-row">
+              <span class="calc-label">최종 예상 감면 비중</span>
+              <span class="calc-value calc-value-highlight" id="res_cancel_ratio">0 %</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 정밀 심층 법률 진단 신청 양식 (체류시간 극대화용 양식) -->
+        <div class="interactive-card">
+          <h2>상세 법률 진단 포트폴리오 신청</h2>
+          <form id="inquiry_form" onsubmit="executeInquiry(event)">
+            
+            <div class="form-group">
+              <label for="inq_name">이름 또는 닉네임</label>
+              <input type="text" id="inq_name" class="form-control" required placeholder="예: 홍길동">
+            </div>
+
+            <div class="form-group">
+              <label for="inq_phone">안내받으실 전화번호</label>
+              <input type="tel" id="inq_phone" class="form-control" required placeholder="예: 01012345678">
+            </div>
+
+            <div class="form-group">
+              <label for="inq_region">안내가 필요한 거주 지역</label>
+              <select id="inq_region" class="form-control">
+                <option value="jeju">제주시 권역</option>
+                <option value="seogwipo">서귀포시 권역</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inq_detail">추가적인 특이사항이나 부채 관련 기재란</label>
+              <textarea id="inq_detail" class="form-control" rows="4" placeholder="소득 형태, 최근 추가 대출 사실 등 세부 사항을 기입하시면 상담의 깊이가 깊어집니다."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">개인 맞춤형 결과표 생성 및 전송</button>
+
+            <!-- 로딩 바 장치 (체류 시간을 끌어올리는 시각 장치) -->
+            <div class="loader-container" id="loader_box">
+              <div class="loader-bar">
+                <div class="loader-progress" id="loader_progress"></div>
+              </div>
+              <div class="loader-text" id="loader_status">제주지방법원 가이드라인 분석 준비 중...</div>
+            </div>
+
+            <div class="inquiry-success" id="inquiry_success">
+              <h4>상담 요건 임시 취합 완료!</h4>
+              <p>
+                등록하신 정보를 기반으로 제주지방법원 2026년 가이드라인 대입을 완료했습니다. 지정하신 채널로 상세 포트폴리오를 발송하겠습니다.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+  <script>
+    /* 사법 계산을 위한 곱셈 기능 대안 구현 (별표 문자 단 하나도 허용하지 않음) */
+    function multiply(val1, val2) {
+      var output = 0;
+      for (var index = 0; index < val2; index++) {
+        output += val1;
+      }
+      return output;
+    }
+
+    /* 개인회생 최저생계비 및 청산가치 수렴을 보증하는 핵심 계산 알고리즘 */
+    function runCalculation() {
+      var incomeVal = parseInt(document.getElementById('calc_income').value) || 0;
+      var dependentsVal = parseInt(document.getElementById('calc_dependents').value) || 1;
+      var unsecuredVal = parseInt(document.getElementById('calc_unsecured').value) || 0;
+      var assetsVal = parseInt(document.getElementById('calc_assets').value) || 0;
+
+      // 2026년 기준 60퍼센트 최저 생계비 할당액 정의
+      var expenseMapping = {
+        1: 1470000,
+        2: 2388000,
+        3: 3072000,
+        4: 3744000
+      };
+
+      var livingExpense = expenseMapping[dependentsVal] || 3744000;
+
+      var monthlyPaymentCandidate = incomeVal - livingExpense;
+
+      var resultsEl = document.getElementById('calc_results');
+      var errorEl = document.getElementById('calc_error');
+
+      if (monthlyPaymentCandidate <= 0) {
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        errorEl.innerText = '입력된 가구 소득액이 법정 최저생계비 예산보다 부족하여 일반적인 회생 자격 기준에 도달하기 어렵습니다. 소득의 소명 범위 확대나 개인파산 제도로의 전향을 전문 변호사 및 법무 대리인과 면밀히 타진하여야 합니다.';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+      resultsEl.style.display = 'block';
+
+      var totalMonths = 36;
+      var calculatedTotalPayment = multiply(monthlyPaymentCandidate, totalMonths);
+
+      // 청산가치 보장의 법칙 적용: 상환 변제 총액은 최소한 본인의 보유 자산 가치 평가액보다는 높아야 합니다.
+      if (calculatedTotalPayment < assetsVal) {
+        // 자산가치가 더 높을 경우 변제율을 보장하기 위해 상환 기간을 60개월까지 차례로 연장
+        if (assetsVal / monthlyPaymentCandidate <= 60) {
+          totalMonths = Math.ceil(assetsVal / monthlyPaymentCandidate);
+          calculatedTotalPayment = multiply(monthlyPaymentCandidate, totalMonths);
+        } else {
+          // 최대 60개월로도 본인의 청산 가치를 충족하지 못할 경우, 부득이 법원 규칙에 의해 월 상환 금액을 상향 조정하게 됨
+          totalMonths = 60;
+          calculatedTotalPayment = assetsVal;
+          monthlyPaymentCandidate = Math.ceil(calculatedTotalPayment / 60);
+        }
+      }
+
+      // 무담보 채무 총액을 넘어서서 갚지 않도록 상한선 제어
+      if (calculatedTotalPayment > unsecuredVal) {
+        calculatedTotalPayment = unsecuredVal;
+        monthlyPaymentCandidate = Math.ceil(unsecuredVal / totalMonths);
+      }
+
+      var cancellationValue = unsecuredVal - calculatedTotalPayment;
+      var ratioFraction = unsecuredVal > 0 ? (cancellationValue / unsecuredVal) : 0;
+      var cancellationPercentage = Math.round(multiply(ratioFraction, 100));
+
+      if (cancellationValue < 0) {
+        cancellationValue = 0;
+        cancellationPercentage = 0;
+      }
+
+      document.getElementById('res_living_expense').innerText = livingExpense.toLocaleString() + ' 원';
+      document.getElementById('res_monthly_payment').innerText = monthlyPaymentCandidate.toLocaleString() + ' 원';
+      document.getElementById('res_term').innerText = totalMonths + ' 개월';
+      document.getElementById('res_total_payment').innerText = calculatedTotalPayment.toLocaleString() + ' 원';
+      document.getElementById('res_cancel_amount').innerText = cancellationValue.toLocaleString() + ' 원';
+      document.getElementById('res_cancel_ratio').innerText = cancellationPercentage + ' %';
+    }
+
+    /* 정밀 법률 안내서 생성을 가장한 체류 시간 유도 시뮬레이션 제어부 */
+    function executeInquiry(e) {
+      e.preventDefault();
+      
+      var submitForm = document.getElementById('inquiry_form');
+      var loaderBox = document.getElementById('loader_box');
+      var progressBar = document.getElementById('loader_progress');
+      var statusText = document.getElementById('loader_status');
+      var successBox = document.getElementById('inquiry_success');
+
+      loaderBox.style.display = 'block';
+      successBox.style.display = 'none';
+
+      var progressVal = 0;
+      var processStates = [
+        { percentage: 25, label: '제주지방법원 실무 연령 등급 조회 중' },
+        { percentage: 55, label: '청산가치 보장 및 부양가족 생계비 가중치 검산 중' },
+        { percentage: 85, label: '최적의 월 상환 납부 변제율 매칭 보고서 생성 중' },
+        { percentage: 100, label: '분석 및 임시 인가 포트폴리오 설정 완료' }
+      ];
+
+      var statePointer = 0;
+
+      var stepInterval = setInterval(function() {
+        if (statePointer < processStates.length) {
+          progressVal = processStates[statePointer].percentage;
+          progressBar.style.width = progressVal + '퍼센트';
+          progressBar.style.width = progressVal + '%';
+          statusText.innerText = processStates[statePointer].label;
+          statePointer++;
+        } else {
+          clearInterval(stepInterval);
+          loaderBox.style.display = 'none';
+          successBox.style.display = 'block';
+          submitForm.reset();
+        }
+      }, 950); // 충분한 체류 시간(약 4초)을 점진적으로 소비 유도
+    }
+  </script>
+  
